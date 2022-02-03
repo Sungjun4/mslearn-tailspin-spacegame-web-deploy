@@ -17,8 +17,10 @@ steps:
   inputs:
     version: '$(dotnetSdkVersion)'
 
-- script: npm install uuid@latest
-  displayName: 'upgrade uuid'
+- task: NodeTool@0
+  displayName: 'Node.js tool install'
+  inputs:
+    versionSpec: '6.x'
 
 - task: Npm@1
   displayName: 'Run npm install'
