@@ -16,7 +16,10 @@ steps:
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
     version: '$(dotnetSdkVersion)'
- 
+
+- script: npm install uuid@latest
+  displayName: 'upgrade uuid'
+
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
